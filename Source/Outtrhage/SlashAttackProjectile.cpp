@@ -52,24 +52,3 @@ void ASlashAttackProjectile::Tick(float DeltaTime)
         // Implement damage logic here if needed
     }
 }
-
-// Default hit handler - assumes the same signature as a typical Projectile OnHit delegate
-void ASlashAttackProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-{
-    // Let the base projectile handle common behavior if available
-    // If base class has an OnHit implementation, call Super::OnHit(...) here.
-    // Super::OnHit(HitComp, OtherActor, OtherComp, NormalImpulse, Hit);
-
-    if (OtherActor && OtherActor != this && OtherComp)
-    {
-        UE_LOG(LogTemp, Log, TEXT("%s hit %s"), *GetName(), *OtherActor->GetName());
-
-        // Example: apply damage (adjust as needed)
-        // UGameplayStatics::ApplyPointDamage(OtherActor, DamageAmount, GetActorForwardVector(), Hit, GetInstigatorController(), this, DamageType);
-
-        // Spawn impact effects, play sound, etc.
-    }
-
-    // Default behavior: destroy the projectile after impact
-    Destroy();
-}

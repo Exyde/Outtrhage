@@ -39,7 +39,7 @@ protected:
 	FOnProjectileStartDamageSignature OnProjectileStartDamage;
 	UPROPERTY(BlueprintAssignable, Category = "Default")
 	FOnProjectileOnTickSignature OnProjectileOnTick;
-	Uproperty(BlueprintAssignable, Category = "Default")
+	UPROPERTY(BlueprintAssignable, Category = "Default")
 	FOnProjectileEndSignature OnProjectileEnd;
 
 	// Called when the game starts or when spawned
