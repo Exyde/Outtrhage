@@ -17,7 +17,6 @@ public:
     virtual void Tick(float DeltaTime) override;
 
 protected:
-    UPROPERTY(BlueprintAssignable, Category = "Default")
     float timeToDamage;
     // Add properties here
     
