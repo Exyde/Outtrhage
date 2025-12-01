@@ -22,7 +22,6 @@ class OUTTRHAGE_API IAttackStrategy
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	virtual ~IAttackStrategy() = default;
 	virtual void Execute() = 0;
 	virtual bool CanExecute() const = 0;
 	virtual float GetCooldown() const = 0;

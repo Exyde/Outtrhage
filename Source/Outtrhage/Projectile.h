@@ -6,6 +6,19 @@
 #include "GameFramework/Actor.h"
 #include "Projectile.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnProjectileSpawnedSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnProjectileStartDamageSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnProjectileOnTickSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnProjectileEndSignature);
+
+enum class EProjectileState : uint8
+{
+	Spawning,
+	Active,
+	Deactivating,
+	Inactive
+};
+
 UCLASS()
 class OUTTRHAGE_API AProjectile : public AActor
 {
@@ -16,6 +29,19 @@ public:
 	AProjectile();
 
 protected:
+	int damage;
+	int timer;
+	EProjectileState currentState;
+
+	UPROPERTY(BlueprintAssignable, Category = "Default")
+	FOnProjectileSpawnedSignature OnProjectileSpawned;
+	UPROPERTY(BlueprintAssignable, Category = "Default")
+	FOnProjectileStartDamageSignature OnProjectileStartDamage;
+	UPROPERTY(BlueprintAssignable, Category = "Default")
+	FOnProjectileOnTickSignature OnProjectileOnTick;
+	UPROPERTY(BlueprintAssignable, Category = "Default")
+	FOnProjectileEndSignature OnProjectileEnd;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
