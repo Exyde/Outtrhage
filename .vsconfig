@@ -10,6 +10,6 @@
     "Microsoft.VisualStudio.Workload.CoreEditor",
     "Microsoft.VisualStudio.Workload.ManagedDesktop",
     "Microsoft.VisualStudio.Workload.NativeDesktop",
-    "Microsoft.VisualStudio.Workload.NativeGame"
+    "Microsoft.VisualStudio.Workload.NativeGame" 
   ]
 }
