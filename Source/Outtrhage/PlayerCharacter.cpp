@@ -25,6 +25,19 @@ void APlayerCharacter::Tick(float DeltaTime)
 
 }
 
+FVector APlayerCharacter::GetAttackDirection(bool bIsRightStick, bool bisRaw)
+{
+	if (bIsRightStick)
+	{
+		
+	} 
+	else
+	{
+
+	}
+    return FVector(0.0f, 0.0f, 0.0f);
+}
+
 // Called to bind functionality to input
 void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
