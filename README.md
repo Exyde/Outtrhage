@@ -1,6 +1,6 @@
 # Outtrhage
 
-## Prototype V0.01
+## Prototype V0.02
 
 Currently in dev. 
 This proto should include:  
